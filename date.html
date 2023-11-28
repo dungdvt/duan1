@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+
+<style>
+    .clock {
+    width: 450px ;
+    background-color: #333;
+    color: #fff;
+    font-family: 'Quicksand', 'Helvetica', Arial, sans-serif;
+    font-weight: lighter;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+
+}
+.inside {
+    width: 100%;
+    background-color: #222;
+    padding: 35px 0;
+    text-align: center;
+
+}
+.days-of-week {
+    color: #ffffff33;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1rem;
+}
+.active {
+    color: #ffffff;
+
+}
+.time {
+    font-size: 2.5rem;
+    margin-top: 10px;
+
+}
+#ampm{
+    font-size: 1.5rem;
+}
+.date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 35px;
+
+}
+.icon img {
+    width: 30px;
+    height: 30px;
+}
+</style>    
+</head>
+<body>
+    <div class="clock">
+        <div class="inside">
+            <div class="days-of-week">
+                <span id="sun" class="active" >SUN</span>
+                <span id="mon"  >MON</span>
+                <span id="tus"  >TUE</span>
+                <span id="wed"  >WED</span>
+                <span id="thu"  >THU</span>
+                <span id="fri"  >FRI</span>
+                <span id="sat"  >SAT</span>
+            </div>
+            <br>
+            <div class="time">
+                <span id="hours">01</span>
+                :
+                <span id="min">01</span>
+                :
+                <span id="sec">01</span>
+                <span id="ampm">AM</span>
+            </div>
+            <div class="date">
+                <span class="icon">
+                    <img src="http://codetheworld.io/wp-content/uploads/2023/11/eYxgJJX_icon_cal.png" alt="cal">
+                </span>
+                <span id="year">2023</span>
+                <span id="mon">JAN</span>
+                <span id="day">01</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const daysOfWeek = [
+        'sun','mon', 'tus', 'wed','thu','fri','sat'
+    ] ;
+    const months = [
+        'JAN', 'FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'
+    ];
+    const $ = (id) => document.getElementById(id);
+    const zeroPadding = (num) => String(num).padStart(2, '0');
+    function clock() {
+        const today =  new Date();
+        const h = today.getHours();
+        const m = today.getMinutes();
+        const s = today.getSeconds();
+        const ampm = h< 11 ? 'AM':'PM';
+        const day = today.getDay();
+        const date = today.getDate();
+        const month = today.getMonth();
+        const year = today.getFullYear();
+
+        $('hours').innerHTML = zeroPadding(h);
+        $('min').innerHTML = zeroPadding(m);
+        $('sec').innerHTML = zeroPadding(s);
+        $('ampm').innerHTML = ampm;
+        $(daysOfWeek.at(day - 1)).classList.remove('active');
+        $(daysOfWeek[day]).classList.add('active');
+        $('year').innerHTML = year;
+        $('month').innerHTML = months[month];
+        $('day').innerHTML = zeroPadding(date); 
+    }
+    setInterval(clock, 400);
+</script>
+</html>

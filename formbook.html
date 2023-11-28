@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form đặt lịch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+       
+    body {
+        background-color: #000; 
+        color: #FFD700; 
+    }
+    
+    .header {
+        background-color: #222; 
+    }
+
+    .header a {
+        color: #FFD700; 
+    }
+
+    .form-group label{
+        color: #fff;
+    }
+    .form-group input,
+    .form-group select {
+        color: #222; 
+    }
+    .btn-primary {
+        margin: 0 330px;
+        background-color: #000000; 
+        border:1px solid white;
+        padding: 10px 10px;
+        border-radius: 10px;
+    }
+
+    .btn-primary:hover {
+        background-color: goldenrod; 
+        border:1px solid white;
+    }
+</style>
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+       <!-- HEADER -->
+       <div class="header">
+        <div class="logo">
+            <a href=""><img src="image/dichvu/logo.png" width="150px"></a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="dsdichvu.html">Dịch vụ</a></li>
+                <li><a href="">Giới thiệu</a></li>
+                <li><a href="">Liên hệ</a></li>
+            </ul>
+        </div>
+        <div class="dangnhap">
+            <input type="submit" value="Đăng nhập">
+        </div>
+    </div>
+   
+    <!-- END HEADER -->
+        <main class="container">
+            <form action="" method="post">
+                <h1 class="mt-5">Đặt lịch giữ chỗ</h1>
+                <div class="form-group">
+                    <label for="dichvu">1. Chọn dịch vụ</label>
+                    <select class="form-control" id="dichvu" name="dichvu">
+                        <option value="">Tất cả</option>
+                        <option value="1">basic</option>
+                        <option value="2">Gói combo</option>
+                        <option value="3">Gói nâng cao</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tho">2. Chọn thợ</label>
+                    <select class="form-control" id="tho" name="tho">
+                        <option value="">Tất cả</option>
+                        <option value="1">Đen</option>
+                        <option value="2">Binz</option>
+                        <option value="3">Pháo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tho">3. Chọn ca</label>
+                    <select class="form-control" id="tho" name="tho">
+                        <option value="">Tất cả</option>
+                        <option value="1">ca 1 : (8-9h)</option>
+                        <option value="1">ca 2 : (9-10h)</option>
+                        <option value="1">ca 3 : (10-11h)</option>
+                        <option value="1">ca 4 : (11-12h)</option>
+                        <option value="1">ca 5 : (13-14h)</option>
+                        <option value="1">ca 6 : (14-15h)</option>
+                        <option value="1">ca 7 : (15-16h)</option>
+                        <option value="1">ca 8 : (16-17h)</option>
+                        <option value="1">ca 9 : (17-18h)</option>
+                        <option value="1">ca 10 : (18-19h)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="lich">3. Chọn phòng để đặt vé</label>
+                      
+                        <div class="nut"> 
+                            <button class="room-button" id="room1">Phòng 1</button>
+                            <button class="room-button" id="room2">Phòng 2</button>
+                            <button class="room-button" id="room3">Phòng 3</button>
+                            <button class="room-button" id="room4">Phòng 4</button>
+                            <button class="room-button" id="room4">Phòng 4</button>
+                            <button class="room-button" id="room4">Phòng 4</button>
+                            <button class="room-button" id="room4">Phòng 4</button>
+                            <button class="room-button" id="room4">Phòng 4</button>
+                            <button class="room-button" id="room4">Phòng 4</button>
+                            <button class="room-button" id="room4">Phòng 4</button>
+                            <button class="room-button" id="room4">Phòng 4</button>
+                            <button class="room-button" id="room4">Phòng 4</button>
+                            <button class="room-button" id="room4">Phòng 4</button>
+                            <button class="room-button" id="room4">Phòng 4</button>
+                            <button class="room-button" id="room4">Phòng 4</button>
+                            <button class="room-button" id="room4">Phòng 4</button>
+                            <button class="room-button" id="room4">Phòng 4</button>
+                            <button class="room-button" id="room4">Phòng 4</button>
+                            <button class="room-button" id="room4">Phòng 4</button>
+                            <button class="room-button" id="room4">Phòng 4</button>
+                        </div>
+                       
+                 
+                        <script>
+                            // JavaScript để xử lý sự kiện chọn phòng
+                            const roomButtons = document.querySelectorAll(".room-button");
+                    
+                            roomButtons.forEach((button) => {
+                                button.addEventListener("click", () => {
+                                    // Kiểm tra nếu nút đã được chọn
+                                    if (button.classList.contains("selected-room")) {
+                                        // Nếu đã được chọn, bỏ chọn bằng cách xóa lớp "selected-room"
+                                        button.classList.remove("selected-room");
+                                    } else {
+                                        // Nếu chưa được chọn, thêm lớp "selected-room"
+                                        button.classList.add("selected-room");
+                                    }
+                                    
+                                    // Chuyển trang khi người dùng nhấn vào nút
+                                    window.location.href = "formbook.html"; // Thay "new_page.html" bằng URL của trang bạn muốn chuyển đến.
+                                });
+                            });
+                        </script>
+                </div>
+                <button type="submit" class="btn-primary">Hoàn thành</button>
+            </form>
+        </main>
+
+     <!-- <footer>-->
+        <footer>
+            <div class="boxfooter">
+                <div class="thongtin">
+                    <a href="">Về chúng tôi</a>
+                    <a href="">Dịch vụ</a>
+                    <a href="">Chính sách bảo mật</a>
+                </div>
+                <div class="giolamviec">
+                    <p>Giờ phục vụ:
+                        8h30 - 20h30 (Thứ 2-Chủ nhật)</p>
+                    <p>Hotline (1000đ/phút):1900.27.27.03</p>
+                    <p>Liên hệ học nghề tóc:0967.86.3030</p>
+                    <a href="" class="thongtin">Liên hệ quảng cáo</a>
+                </div>
+
+            </div>
+            <div class="copyright">
+                <p>Copyright © 2023 HuyHTML. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Your JavaScript code here
+    </script>
+</body>
+
+</html>

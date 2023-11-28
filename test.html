@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chọn phòng đặt vé</title>
+    <style>
+        /* Thêm CSS để tạo lưới */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+           
+           /* Khoảng cách giữa các phần tử */
+        }
+        .nut{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* Hai cột */
+            gap: 10px; 
+        }
+        h1 {
+            grid-column: span 2; /* Dãy ngang 2 cột */
+            text-align: center;
+        }
+        .room-button {
+            padding: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+           
+        }
+        .selected-room {
+            background-color: green; /* Màu nền của phòng đã chọn */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chọn phòng để đặt vé</h1>
+        <div class="nut"> 
+            <button class="room-button" id="room1">Phòng 1</button>
+            <button class="room-button" id="room2">Phòng 2</button>
+            <button class="room-button" id="room3">Phòng 3</button>
+            <button class="room-button" id="room4">Phòng 4</button>
+            <button class="room-button" id="room4">Phòng 4</button>
+            <button class="room-button" id="room4">Phòng 4</button>
+            <button class="room-button" id="room4">Phòng 4</button>
+            <button class="room-button" id="room4">Phòng 4</button>
+            <button class="room-button" id="room4">Phòng 4</button>
+            <button class="room-button" id="room4">Phòng 4</button>
+            <button class="room-button" id="room4">Phòng 4</button>
+            <button class="room-button" id="room4">Phòng 4</button>
+            <button class="room-button" id="room4">Phòng 4</button>
+            <button class="room-button" id="room4">Phòng 4</button>
+            <button class="room-button" id="room4">Phòng 4</button>
+            <button class="room-button" id="room4">Phòng 4</button>
+            <button class="room-button" id="room4">Phòng 4</button>
+        </div>
+       
+    </div>
+
+    <script>
+        // JavaScript để xử lý sự kiện chọn phòng
+        const roomButtons = document.querySelectorAll(".room-button");
+
+        roomButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                // Kiểm tra nếu nút đã được chọn
+                if (button.classList.contains("selected-room")) {
+                    // Nếu đã được chọn, bỏ chọn bằng cách xóa lớp "selected-room"
+                    button.classList.remove("selected-room");
+                } else {
+                    // Nếu chưa được chọn, thêm lớp "selected-room"
+                    button.classList.add("selected-room");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
